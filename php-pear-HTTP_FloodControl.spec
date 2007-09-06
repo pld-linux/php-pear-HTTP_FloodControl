@@ -7,7 +7,7 @@ Summary:	%{_pearname} - detect and protect from attempts to flood a site
 Summary(pl.UTF-8):	%{_pearname} - detekcja i ochrona przed atakami typu flood
 Name:		php-pear-%{_pearname}
 Version:	0.1.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -16,7 +16,7 @@ URL:		http://pear.php.net/package/HTTP_FloodControl/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
-Requires:	php-pear-PEAR_Exception >= 1.3.3
+Requires:	php-pear-PEAR-core
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,8 +61,9 @@ Ta klasa ma w PEAR status: %{_status}.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/HTTP
 %pear_package_install
+mv -f $RPM_BUILD_ROOT%{php_pear_dir}/{Flood*,HTTP}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -76,5 +77,5 @@ fi
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/FloodControl/
-%{php_pear_dir}/FloodControl.php
+%{php_pear_dir}/HTTP/FloodControl/
+%{php_pear_dir}/HTTP/FloodControl.php
