@@ -7,7 +7,7 @@ Summary:	%{_pearname} - detect and protect from attempts to flood a site
 Summary(pl.UTF-8):	%{_pearname} - detekcja i ochrona przed atakami typu flood
 Name:		php-pear-%{_pearname}
 Version:	0.1.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
