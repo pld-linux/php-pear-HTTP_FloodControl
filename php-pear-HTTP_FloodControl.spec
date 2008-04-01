@@ -4,7 +4,7 @@
 %define		_status		alpha
 %define		_pearname	HTTP_FloodControl
 Summary:	%{_pearname} - detect and protect from attempts to flood a site
-Summary(pl.UTF-8):	%{_pearname} - detekcja i ochrona przed atakami typu flood
+Summary(pl.UTF-8):	%{_pearname} - wykrywanie i ochrona przed atakami typu flood
 Name:		php-pear-%{_pearname}
 Version:	0.1.1
 Release:	3
@@ -40,9 +40,9 @@ MDB2) to handle counter logs.
 In PEAR status of this package is: %{_status}.
 
 %description -l pl.UTF-8
-Klasa HTTP_FloodControl może być użytka do wykrycia i ochrony strony
-Web przed próbami przepełnienia ich zbyt dużą ilością zapytań. Pozwala
-także na ochronę serwisu przed automatycznym sciąganiem wielu stron
+Klasa HTTP_FloodControl może być użyta do wykrycia i ochrony stron
+WWW przed próbami przepełnienia ich zbyt dużą ilością zapytań. Pozwala
+także na ochronę serwisu przed automatycznym ściąganiem wielu stron
 przez klienta identyfikowanego na podstawie adresu IP, identyfikatora
 sesji bądź innego unikalnego identyfikatora.
 
@@ -52,7 +52,7 @@ Możliwe jest określenie wielu parametrów jednocześnie w celu
 zapewnienia skutecznej ochrony.
 
 Pakiet ten może skorzystać z różnych kontenerów danych (pliki, DB,
-MDB, MDB2) w celu przechowywania informacji o licznach logów.
+MDB, MDB2) w celu przechowywania logów liczników.
 
 Ta klasa ma w PEAR status: %{_status}.
 
