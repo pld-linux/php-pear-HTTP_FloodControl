@@ -1,13 +1,11 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		HTTP
-%define		_subclass	FloodControl
 %define		_status		alpha
 %define		_pearname	HTTP_FloodControl
 Summary:	%{_pearname} - detect and protect from attempts to flood a site
 Summary(pl.UTF-8):	%{_pearname} - wykrywanie i ochrona przed atakami typu flood
 Name:		php-pear-%{_pearname}
 Version:	0.1.1
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -17,6 +15,10 @@ BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-pear-PEAR-core
+Requires:	php-pear-PEAR_Exception >= 1.3.3
+Suggests:	php-pear-DB
+Suggests:	php-pear-MDB
+Suggests:	php-pear-MDB2
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,8 +42,8 @@ MDB2) to handle counter logs.
 In PEAR status of this package is: %{_status}.
 
 %description -l pl.UTF-8
-Klasa HTTP_FloodControl może być użyta do wykrycia i ochrony stron
-WWW przed próbami przepełnienia ich zbyt dużą ilością zapytań. Pozwala
+Klasa HTTP_FloodControl może być użyta do wykrycia i ochrony stron WWW
+przed próbami przepełnienia ich zbyt dużą ilością zapytań. Pozwala
 także na ochronę serwisu przed automatycznym ściąganiem wielu stron
 przez klienta identyfikowanego na podstawie adresu IP, identyfikatora
 sesji bądź innego unikalnego identyfikatora.
