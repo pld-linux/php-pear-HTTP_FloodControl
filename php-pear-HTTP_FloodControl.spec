@@ -13,7 +13,7 @@ Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 URL:		http://pear.php.net/package/HTTP_FloodControl/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.571
 Requires:	php-pear
 Requires:	php-pear-PEAR-core
 Requires:	php-pear-PEAR_Exception >= 1.3.3
@@ -71,14 +71,12 @@ mv -f $RPM_BUILD_ROOT%{php_pear_dir}/{Flood*,HTTP}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
-	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
-fi
+%post -p <lua>
+%pear_package_print_optionalpackages
 
 %files
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/HTTP/FloodControl/
 %{php_pear_dir}/HTTP/FloodControl.php
+%{php_pear_dir}/HTTP/FloodControl
