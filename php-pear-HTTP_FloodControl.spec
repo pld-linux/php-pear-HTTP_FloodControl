@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		alpha
 %define		_pearname	HTTP_FloodControl
 Summary:	%{_pearname} - detect and protect from attempts to flood a site
